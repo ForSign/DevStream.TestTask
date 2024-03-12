@@ -17,6 +17,11 @@ namespace NET
             }
             var x = "TEST T SET";
             Console.WriteLine(PalindromeChecker.IsPalindrome(x));
+
+            foreach (int element in ElementFinder.MissingElements([4,6,9]))
+            {
+                Trace.WriteLine(element);
+            }
         }
     }
 }
