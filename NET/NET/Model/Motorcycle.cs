@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NET.Model
 {
-    internal class Motorcycle : Vehicle
+    public class Motorcycle : Vehicle
     {
         public Motorcycle()
         {

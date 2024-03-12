@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NET.Model
 {
-    internal class Bicycle : Vehicle
+    public class Bicycle : Vehicle
     {
         public int WheelCount { get; set; }
         public string RoadType { get; set; } // Should be enum

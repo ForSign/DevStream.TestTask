@@ -10,10 +10,10 @@ namespace NET.Model
     /// Abstract class for vehicle properties that will be shared among
     /// all other  vehicle inheritors
     /// </summary>
-    internal abstract class Vehicle
+    public abstract class Vehicle
     {
-        protected string? Name { get; set; }
-        protected float Weight { get; set; }
-        protected double Price { get; set; }
+        public string? Name { get; set; }
+        public float Weight { get; set; }
+        public double Price { get; set; }
     }
 }

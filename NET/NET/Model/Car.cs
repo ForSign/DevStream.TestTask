@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NET.Model
 {
-    internal class Car : Vehicle
+    public class Car : Vehicle
     {
         public int MaxPassenger { get; set; }
         public float MaxSpeed { get; set; }
