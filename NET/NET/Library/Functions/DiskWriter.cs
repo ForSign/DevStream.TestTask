@@ -15,19 +15,21 @@ namespace NET.Library.Functions
         /// <summary>
         /// Generate files with randomizer
         /// </summary>
-        /// <param name="randomSet">I</param>
         /// <param name="pathDir">Save directory</param>
-        public static void SaveVehicles(IEnumerable<Vehicle> ie, string pathDir)
+        public static void SaveVehicles<T>(IEnumerable<T> ie, string pathDir)
         {
-            foreach (Vehicle item in ie)
+            foreach (T item in ie)
             {
-                string filename = pathDir + item.GetType().Name;
-                XmlSerializer serializer = new(item.GetType());
+                if (item != null)
+                {
+                    string filename = pathDir + item.GetType().Name;
+                    XmlSerializer serializer = new(item.GetType());
 
-                Stream fs = new FileStream(filename, FileMode.Create);
-                XmlTextWriter writer = new(fs, Encoding.Unicode);
-                serializer.Serialize(writer, item);
-                writer.Close();
+                    Stream fs = new FileStream(filename, FileMode.Create);
+                    XmlTextWriter writer = new(fs, Encoding.Unicode);
+                    serializer.Serialize(writer, item);
+                    writer.Close();
+                }
             }
         }
     }
