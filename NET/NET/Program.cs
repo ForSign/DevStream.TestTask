@@ -15,8 +15,8 @@ namespace NET
             {
                 Console.WriteLine(name); // Write all names to console (Task3)
             }
-            var x = "TEST STRING";
-            Console.WriteLine(x.CustomReverser());
+            var x = "TEST T SET";
+            Console.WriteLine(PalindromeChecker.IsPalindrome(x));
         }
     }
 }
