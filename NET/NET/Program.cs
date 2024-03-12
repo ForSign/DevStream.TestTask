@@ -1,6 +1,7 @@
 ﻿using NET.Model;
 using NET.Services;
 using System.Diagnostics;
+using NET.Library.Functions;
 
 namespace NET
 {
@@ -8,10 +9,13 @@ namespace NET
     {
         static void Main(string[] args)
         {
-            foreach (Vehicle vehicle in InstanceService<Vehicle>.GetInstances())
+            List<string> names = GetTypeNames.GetNames(InstanceService<Vehicle>.GetInstances());
+            foreach (string name in names)
             {
-                Trace.WriteLine(vehicle);
-            };
+                Console.WriteLine(name); // Write all names to console (Task3)
+            }
+
+            DiskWriter.SaveVehicles(InstanceService<Vehicle>.GetInstances(), "");
         }
     }
 }
