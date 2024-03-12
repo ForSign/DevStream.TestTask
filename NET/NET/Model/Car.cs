@@ -11,7 +11,8 @@ namespace NET.Model
         public int MaxPassenger { get; set; }
         public float MaxSpeed { get; set; }
 
-        public Car(string name = "TheCar") : this(name, 150f, 4, 2.5f, 1000.99) { }
+        public Car() : this("TheCar") { }
+        public Car(string name) : this(name, 150f, 4, 2.5f, 1000.99) { }
         public Car(string name, float maxSpeed, int maxPassenger, float weight, double price)
         {
             this.Name = name;

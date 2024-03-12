@@ -13,6 +13,7 @@ namespace NET.Model
         public float MaxHeight { get; set; }
         public string EngineType { get; set; } // better enum
 
+        public Plane() : this("ThePlane") { }
         public Plane(string name = "ThePlane") : this(name, 300f, 2, 2500f, 20.000, 6.6f, "Piston") { }
         public Plane(string name,
                      float maxSpeed,
