@@ -2,6 +2,7 @@
 using NET.Services;
 using System.Diagnostics;
 using NET.Library.Functions;
+using NET.Library;
 
 namespace NET
 {
@@ -14,8 +15,8 @@ namespace NET
             {
                 Console.WriteLine(name); // Write all names to console (Task3)
             }
-
-            DiskWriter.SaveVehicles(InstanceService<Vehicle>.GetInstances(), "");
+            var x = "TEST STRING";
+            Console.WriteLine(x.CustomReverser());
         }
     }
 }
