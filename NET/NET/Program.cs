@@ -16,9 +16,9 @@ namespace NET
             }
 
             var x = "TEST T SET";
-            Trace.WriteLine(PalindromeChecker.IsPalindrome(x));
+            Trace.WriteLine(Algorithm.IsPalindrome(x));
 
-            foreach (int element in ElementFinder.MissingElements([4,6,9]))
+            foreach (int element in Algorithm.MissingElements([4,6,9]))
             {
                 Trace.WriteLine(element);
             }
