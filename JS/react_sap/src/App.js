@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './styles/App.css';
 import Tos from "./components/Tos";
 import TosModal from "./components/UI/TosModal/TosModal";
+import Galley from "./components/Galley";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
             <TosModal visible={modal}>
                 <Tos acceptTos={acceptTos}/>
             </TosModal>
+            <Galley/>
         </div>
     );
 }
