@@ -1,4 +1,5 @@
 import React from 'react';
+import DownloadButton from "./UI/Button/DownloadButton";
 
 const Canvas = ({ imageUrl }) => {
 
@@ -24,7 +25,10 @@ const Canvas = ({ imageUrl }) => {
     });
 
     return (
-        <canvas className="gallery-image" ref={canvas} width={width} height={height}/>
+        <div>
+            <canvas className="gallery-image" ref={canvas} width={width} height={height}/>
+            <DownloadButton href={imageUrl}/>
+        </div>
     );
 };
 
