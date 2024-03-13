@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TosItem from "./TosItem";
 import myData from "../test.json";
+import AcceptButton from "./UI/Button/AcceptButton";
 
 const Tos = () => {
 
@@ -16,9 +17,9 @@ const Tos = () => {
                     <hr className="pill"/>
                 </div>
             )}
-            <button className="button">
+            <AcceptButton>
                 Click Me!
-            </button>
+            </AcceptButton>
         </div>
     );
 };
