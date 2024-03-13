@@ -7,7 +7,7 @@ const Canvas = ({ imageUrl }) => {
     let height;
 
     var image = new Image();
-    image.src = "http://188.166.203.164" + imageUrl;
+    image.src = imageUrl;
 
     width = image.width;
     height = image.height
