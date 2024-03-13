@@ -3,7 +3,7 @@ import TosItem from "./TosItem";
 import myData from "../test.json";
 import AcceptButton from "./UI/Button/AcceptButton";
 
-const Tos = () => {
+const Tos = ({acceptTos}) => {
 
     const [terms, setTerms] = useState(myData.terms_of_use.paragraphs)
 
@@ -17,8 +17,8 @@ const Tos = () => {
                     <hr className="pill"/>
                 </div>
             )}
-            <AcceptButton>
-                Click Me!
+            <AcceptButton onClick={acceptTos}>
+                Accept
             </AcceptButton>
         </div>
     );
