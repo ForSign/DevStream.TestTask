@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import TosItem from "./TosItem";
-import myData from "../test.json";
 import AcceptButton from "./UI/Button/AcceptButton";
 
-const Tos = ({acceptTos}) => {
+const Tos = ({acceptTos, jsonData}) => {
 
-    const [terms, setTerms] = useState(myData.terms_of_use.paragraphs)
+    const [terms, setTerms] = useState(jsonData.terms_of_use.paragraphs)
 
     return (
         <div>

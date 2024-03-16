@@ -1,13 +1,9 @@
 import React, {useState} from 'react';
-import myData from "../test.json";
 import Canvas from "./Canvas";
-import DownloadButton from "./UI/Button/DownloadButton";
 
-const Galley = () => {
+const Galley = ({host, jsonData}) => {
 
-    const [images, setImages] = useState(myData.images)
-
-    const host = "http://188.166.203.164";
+    const [images, setImages] = useState(jsonData.images);
 
     return (
         <div className="gallery">

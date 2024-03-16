@@ -11,7 +11,7 @@ const Canvas = ({ imageUrl }) => {
     image.src = imageUrl;
 
     width = image.width;
-    height = image.height
+    height = image.height;
 
     function DrawImage(context) {
         image.onload = () => {
