@@ -8,7 +8,7 @@ import rootConfig from "./config.json";
 function App() {
 
     const [modal, setModal] = useState(true);
-    // const [data, setData] = useState({});
+    const [data, setData] = useState(null);
 
     const apiUrl = rootConfig.host + rootConfig.jsonPath;
 
@@ -17,34 +17,30 @@ function App() {
 
     }
 
-    // let displayData;
-
-    const [data, setData] = useState(null)
-
     useEffect(() => {
-        const load = async (id_) => {
-            let url = apiUrl
-            let data = await (await fetch(url)).json()
-            const manipulatedData = data
-            // do manipulation
-            setData(manipulatedData)
-        }
-        load()
-    }, [])
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => setData(data))
+            .catch(error => console.error('There has been a problem with your fetch operation:', error));
+    }, []);
 
-    return (
-        <div className="App">
-            {data}
-            {/*<TosModal visible={modal}>*/}
-            {/*    <Tos acceptTos={acceptTos} jsonData={data}/>*/}
-            {/*</TosModal>*/}
-            {/*{modal === true*/}
-            {/*    ? <Galley host={rootConfig.host} jsonData={data}/>*/}
-            {/*    : <></>*/}
-            {/*}*/}
-        </div>
-    );
-
+    if (data !== null)
+        return (
+            <div className="App">
+                <TosModal visible={modal}>
+                    <Tos acceptTos={acceptTos} jsonData={data}/>
+                </TosModal>
+                {!modal === true
+                    ? <Galley host={rootConfig.host} jsonData={data}/>
+                    : <></>
+                }
+            </div>
+        );
 }
 
 export default App;
