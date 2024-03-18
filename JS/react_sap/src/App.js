@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useReducer} from 'react';
 import './styles/App.css';
 import Tos from "./components/Tos";
 import TosModal from "./components/UI/TosModal/TosModal";
 import Galley from "./components/Galley";
 import rootConfig from "./config.json";
+import AcceptButton from "./components/UI/Button/AcceptButton";
 
 function App() {
 
@@ -12,9 +13,11 @@ function App() {
 
     const apiUrl = rootConfig.host + rootConfig.jsonPath;
 
-    const acceptTos = () => {
-        setModal(false);
+    // const [, forceUpdate] = useReducer(x => x + 1, 0);
 
+    const acceptTos = async () => {
+        setModal(false);
+        // forceUpdate();
     }
 
     useEffect(() => {
@@ -35,10 +38,8 @@ function App() {
                 <TosModal visible={modal}>
                     <Tos acceptTos={acceptTos} jsonData={data}/>
                 </TosModal>
-                {!modal === true
-                    ? <Galley host={rootConfig.host} jsonData={data}/>
-                    : <></>
-                }
+                {/* Require rerender canvas if conditional or hide buttons */}
+                <Galley host={rootConfig.host} jsonData={data} displayBool={modal}/>
             </div>
         );
 }

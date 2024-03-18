@@ -1,7 +1,7 @@
 import React from 'react';
 import DownloadButton from "./UI/Button/DownloadButton";
 
-const Canvas = ({ imageUrl }) => {
+const Canvas = ({ imageUrl, displayBool }) => {
 
     const canvas = React.useRef();
     let width;
@@ -27,7 +27,7 @@ const Canvas = ({ imageUrl }) => {
     return (
         <div>
             <canvas className="gallery-image" ref={canvas} width={width} height={height}/>
-            <DownloadButton href={imageUrl}/>
+            {!displayBool && <DownloadButton href={imageUrl}/>}
         </div>
     );
 };
