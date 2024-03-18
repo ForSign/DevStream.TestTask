@@ -7,7 +7,7 @@ const TosItem = (props) => {
             <div className="term__content">
                 <strong className="term__header">{props.term.index}. {props.term.title}</strong>
                 <div className="term__body">
-                    {props.term.content}
+                    {props.term.content || props.term.text}
                 </div>
             </div>
         </div>
