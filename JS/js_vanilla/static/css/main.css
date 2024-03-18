@@ -1,3 +1,4 @@
+@import "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
 /* Background */
 html {
     background: #f0ebdc;
@@ -146,7 +147,6 @@ accept_button:focus {
 }
 
 /* Download button */
-@import "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
 a:link{text-decoration:none}
 
 .button {
@@ -180,7 +180,7 @@ a:link{text-decoration:none}
     left:0
 }
 
-.vn-teal a:hover{
+.button a:hover{
     background:#2c3e50
 }
 
