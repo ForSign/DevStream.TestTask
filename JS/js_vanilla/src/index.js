@@ -2,7 +2,7 @@ const host = 'http://188.166.203.164';
 const hostJsonPath = '/static/test.json';
 
 
-// Download Image Button
+// Built Download Image Button
 function getDownloadButton(imageLink) {
   let downloadButton = document.createElement('div');
   downloadButton.className = "button";
@@ -98,10 +98,6 @@ function getTos(msg){
   tosAccept.className = "accept_button";
   tosAccept.innerHTML = "Accept";
   tosAccept.id = "AcceptTosID";
-  // tosAccept.onclick = async() => {
-  //   await acceptTermsOfUse();
-  //   console.log("accpted");
-  // };
 
   newTosDiv.appendChild(tosHeader);
   newTosDiv.appendChild(pill);
@@ -112,7 +108,7 @@ function getTos(msg){
 }
 
 
-// Built modal as element
+// Built modal element
 function getTosModal(data){
   let newTosModal = document.createElement('div');
   newTosModal.className = "TosModal active";
@@ -128,7 +124,7 @@ function getTosModal(data){
 }
 
 
-// Built gallery withh renderImageToCanvas
+// Built gallery element with renderImageToCanvas
 function getGallery(data) {
   let newGallery = document.createElement('div');
   newGallery.className = "gallery";
@@ -159,7 +155,7 @@ async function JsonFetch(jsonLink) {
 }
 
 
-// Render image as canvas and return (with download button)
+// Render image as canvas and return div element (with download button)
 function renderImageToCanvas(imageUrl){
   let newCanvas = document.createElement('canvas');
 
