@@ -10,12 +10,12 @@ fs.readFile('./index.html', function (err, data) {
     throw err;
   }
   html = data;
-});fs.readFile('./index.css', function (err, data) {
+});fs.readFile('./static/ccs/main.css', function (err, data) {
   if (err) {
     throw err;
   }
   css = data;
-});fs.readFile('./index.js', function (err, data) {
+});fs.readFile('./src/index.js', function (err, data) {
   if (err) {
     throw err;
   }
