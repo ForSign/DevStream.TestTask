@@ -6,6 +6,7 @@ const Tos = ({acceptTos, jsonData}) => {
 
     const [terms, setTerms] = useState(jsonData.terms_of_use.paragraphs)
 
+    // Main Tos component
     return (
         <div>
             <h1>Terms Of Service</h1>

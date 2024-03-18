@@ -1,6 +1,7 @@
 import React from 'react';
 
 const TosItem = (props) => {
+    // Tos element that fit json pattern
     return (
         <div className="term">
             <div className="term__content">

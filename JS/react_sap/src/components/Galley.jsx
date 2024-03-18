@@ -5,6 +5,7 @@ const Galley = ({host, jsonData, displayBool}) => {
 
     const [images, setImages] = useState(jsonData.images);
 
+    // Main Gallery object that holds images
     return (
         <div className="gallery">
             {images.map((image) =>

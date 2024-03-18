@@ -3,6 +3,8 @@ import cl from './DownloadButton.module.css';
 
 const DownloadButton = ({href}) => {
 
+    // Image download function
+    // Needed because image opens on href from <a/>
     async function download() {
         const image = await fetch(href)
         const imageBlog = await image.blob()
@@ -16,6 +18,7 @@ const DownloadButton = ({href}) => {
         document.body.removeChild(link)
     }
 
+    // Main Download image button
     return (
         <div className={cl.button}>
             <a className="btn-wrap" onClick={download}>Download</a>
