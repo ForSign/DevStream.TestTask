@@ -84,7 +84,7 @@ function getTos(msg){
       getTosElement({
         "index": term.index,
         "title": term.title,
-        "content": term.content
+        "content": term.content || term.text
       })
       );
 
